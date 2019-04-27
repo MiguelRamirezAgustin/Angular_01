@@ -1,0 +1,21 @@
+<div class="container">
+      <div class="row">
+            <div class="col">
+                  <label>Nombre persona</label>
+                  <input
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="tituloPersona">
+                  {{tituloPersona}}
+                  <h1>Listado de personas</h1>
+                  <button class="btn btn-primary" [disabled]="!agregarPersonas" (click)="onCrearPersona()">
+                        Agregar Personas
+                  </button>
+                  <p *ngIf="personaCreada; else sinPersonas">{{agregarPersonaStatus}} con titulo de {{tituloPersona}}</p>
+                  <ng-template #sinPersonas >
+                        <p >No se ha agregado personas___!!</p>
+                  </ng-template>
+                  <app-persona></app-persona>
+            </div>
+      </div>
+</div>
