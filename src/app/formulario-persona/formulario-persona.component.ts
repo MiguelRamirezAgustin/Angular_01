@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import {Persona} from '../listado-personas/persona.model';
 
 @Component({
@@ -11,13 +11,18 @@ export class FormularioPersonaComponent implements OnInit {
   //se comenta para usar refrerencias locales
   // nombreInput:string;
   // apellidoInput:string;
+
+  //viewChildre
+  @ViewChild('nombreInput') nombreInputChildre:ElementRef;
+  @ViewChild('apellidoInput') apellidoInputchildre:ElementRef;
   constructor() { }
 
   ngOnInit() {
   }
 
-  onAgregarPersona(nombreInput:HTMLInputElement, apellidoInput:HTMLInputElement){
-    let persona1=new Persona(nombreInput.value, apellidoInput.value);
+  onAgregarPersona(){
+    let persona1=new Persona(this.nombreInputChildre.nativeElement.value,
+                            this.apellidoInputchildre.nativeElement.value);
     this.personaCreada.emit(persona1);
    }
 
