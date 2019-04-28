@@ -2,23 +2,8 @@
   <div class="col-xs-12">
     <h3>{{titulo}}</h3>
     <hr />
-    <form class="form-row">
-      <div class="form-group col-md-2">
-        <label for="nombre" class=sr-only>Nombre</label>
-        <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control"
-          [(ngModel)]="nombreInput">
-      </div>
-
-      <div class="form-group col-md-2">
-        <label for="nombre" class=sr-only>Apellido</label>
-        <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control"
-          [(ngModel)]="apellidoInput">
-      </div>
-      <div class="col">
-        <button type="submit" class="btn btn-primary" 
-        (click)="onAgregarPersona()">Agregar</button>
-      </div>
-    </form>
+   <app-formulario-persona
+   (personaCreada)="onPersonaAgregada($event)"></app-formulario-persona>
     <hr />
    <app-persona-listado *ngFor="let personaElemento of personas; let i=index"
    [persona]='personaElemento'

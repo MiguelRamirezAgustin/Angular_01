@@ -13,16 +13,11 @@ export class ListadoPersonasComponent  {
   titulo='Listado de personas';
   personas: Persona[] = [];
 
-  nombreInput:string;
-  apellidoInput:string;
-
   constructor() { 
   }
 
+  onPersonaAgregada(persona:Persona){
+    this.personas.push(persona);
 
-  onAgregarPersona(){
-   let persona1=new Persona(this.nombreInput, this.apellidoInput);
-   this.personas.push(persona1);
   }
-
 }
