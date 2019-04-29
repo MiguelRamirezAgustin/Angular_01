@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Persona} from './persona.model';
 
 import { from } from 'rxjs';
+import { LoggingService } from '../persona/LoggingService.service';
+import { PersonasService } from '../persona/personas_service';
 
 @Component({
   selector: 'app-listado-personas',
@@ -13,11 +15,16 @@ export class ListadoPersonasComponent  {
   titulo='Listado de personas';
   personas: Persona[] = [];
 
-  constructor() { 
+  constructor(private MensajeListadoPersona:LoggingService,
+             private personasService: PersonasService,
+            ) 
+             { 
   }
 
-  onPersonaAgregada(persona:Persona){
-    this.personas.push(persona);
+  ngOnInit():void{
+   this.personas=this.personasService.personas;
+   }
 
-  }
+  
+ 
 }

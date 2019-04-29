@@ -2,11 +2,11 @@
   <div class="col-xs-12">
     <h3>{{titulo}}</h3>
     <hr />
-   <app-formulario-persona
-   (personaCreada)="onPersonaAgregada($event)"></app-formulario-persona>
+   <app-formulario-persona></app-formulario-persona>
     <hr />
    <app-persona-listado *ngFor="let personaElemento of personas; let i=index"
    [persona]='personaElemento'
    [indice]='i'></app-persona-listado>
+   
   </div>
 </div>

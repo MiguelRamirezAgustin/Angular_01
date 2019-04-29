@@ -10,6 +10,8 @@ import { PersonasComponent } from './personas/personas.component';
 import { ListadoPersonasComponent } from './listado-personas/listado-personas.component';
 import { PersonaListadoComponent } from './persona-listado/persona-listado.component';
 import { FormularioPersonaComponent } from './formulario-persona/formulario-persona.component';
+import { LoggingService } from './persona/LoggingService.service';
+import { PersonasService } from './persona/personas_service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { FormularioPersonaComponent } from './formulario-persona/formulario-pers
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LoggingService,
+  PersonasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
